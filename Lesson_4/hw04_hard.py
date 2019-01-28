@@ -13,7 +13,10 @@ matrix = [[1, 0, 8],
 #                  [8, 1, 2]]
 
 # Суть сложности hard: Решите задачу в одну строку
-
+matrix = [[1, 0, 8],
+          [3, 4, 1],
+          [0, 4, 2]]
+print("rotate_matrix = ",[_ for _ in zip(*matrix)])
 
 # Задание-2:
 # Найдите наибольшее произведение пяти любых цифр в 1000-значном числе.
@@ -41,3 +44,18 @@ number = """
 05886116467109405077541002256983155200055935729725
 71636269561882670428252483600823257530420752963450"""
 
+number_split=[]
+for _ in number:
+    if _ !='\n' :
+        number_split.append(_)
+number1=[]
+number2=[]
+for _ in number_split:
+    _=int(_)
+    number1.append(_)
+for _ in range(len(number1)):
+    z=number1[_-5]*number1[_-4]*number1[_-3]*number1[_-2]*number1[_-1]
+    number2.append(z)
+k=max(number2)
+p=number2.index(k)-5
+print
