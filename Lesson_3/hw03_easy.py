@@ -5,13 +5,9 @@
 # Для решения задачи не используйте встроенные функции и функции из модуля math.
 
 def udalenie(n,spisok):
-    i=0
-    while i < len(spisok[n:len(spisok)]):
-        spisok[i + n] = 0
-        if spisok[i + n] == 0:
-            spisok.pop(i + n)
-            i = i - 1
-        i = i + 1
+    for i in range(len(spisok)):
+        if len(spisok)!= n:
+            spisok.pop() #удаляем все элементы после n
 
 def okruglenie(b,n,spisok):
     for i in b[2:len(b)]:
@@ -29,14 +25,13 @@ def round_chislo(n):
     b = repr(a)
     spisok = []
     okruglenie(b,n,spisok)
-    i = 0
     chislo = 0
-    while i < len(spisok):
+    for i in range(len(spisok)):
         chislo = chislo + spisok[i] * (10 ** (len(spisok) - i - 1))
-        i = i + 1
     chislo = chislo / (10 ** (len(spisok)))
     print ('начальное число','{:>35}'.format(b))
     print ('округленное до указанного знака ',chislo)
+
 n = int(input('кол-во знаков после которых будет округление: '))
 round_chislo(n)
 
