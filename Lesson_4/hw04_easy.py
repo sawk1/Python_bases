@@ -31,7 +31,7 @@ print (fruits3)
 
 import random
 lst_g = [random.randint(-10,10) for _ in range(100)]
-lst = [_ for _ in lst_g if _>0 and _%3==0 and _%4!=0]
+lst = [_ for _ in lst_g if _>0 and _%2==0 and _%3!=0]
 print (lst_g)
 print (lst)
 
