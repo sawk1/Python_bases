@@ -24,6 +24,26 @@ line = 'mtMmEZUOmcqWiryMQhhTxqKdSTKCYEJlEZCsGAMkgAYEOmHBSQsSUHKvSfbmxULaysmNO'\
 pattern = '[a-z]+'
 print(re.findall(pattern, line))
 
+#без модуля re
+import copy
+line1=[]
+alphabet = list(map(chr, range(ord('A'), ord('Z')+1)))
+line_copy = copy.deepcopy(line)
+line_copy= list(line_copy)
+for _ in line_copy[:]:
+    for __ in alphabet:
+        if _==__:
+              k = line_copy.index(_)
+              line_copy.remove(_)
+              line_copy.insert(k,',')
+myString = ''.join(line_copy)
+line1 = myString.split(',')
+line2=[]
+for _ in line1:
+       if _ != '':
+              line2.append(_)
+print (line2)
+
 # Задание-2:
 # Вывести символы в верхнем регистре, слева от которых находятся
 # два символа в нижнем регистре, а справа - два символа в верхнем регистре.
