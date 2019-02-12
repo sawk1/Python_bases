@@ -53,5 +53,23 @@ print(strok)
 Реализовать для этого метода декоратор @staticmethod
 '''
 
+class NewClass:
+    def __init__(self, n):
+        self.n=n
+    # выводим дробную часть числа
+    def cel(self):
+        return self.n - int(self.n)
 
+    def  __str__(self):
+        return f'целая часть {int(self.n)} и дробная часть {self.cel()}'
+
+    @staticmethod
+    def type2(drob):
+        return type(drob)
+
+a = NewClass(12.3215)
+drob=a.cel()
+strok = str(a)
+type1=a.type2(drob)
+print(type1)
 
